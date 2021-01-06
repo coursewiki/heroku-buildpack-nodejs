@@ -106,7 +106,7 @@ install_nodejs() {
   if [ "$code" != "200" ]; then
     echo "Unable to download node: $code" && false
   fi
-  tar xzf --absolute-names /tmp/node.tar.gz -C /tmp
+  tar xzf /tmp/node.tar.gz -C /tmp --absolute-names 
   rm -rf "${dir:?}"/*
   mv /tmp/node-v"$number"-"$os"-"$cpu"/* "$dir"
   chmod +x "$dir"/bin/*
